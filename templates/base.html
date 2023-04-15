@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>To-Do List</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-XdhejzZkAWlLX9y8W+jjf48/EvF6rJlyzTcZsWucq3UWsJ6CrLQ6X9fO33yquluxvSbVST2QAmOedNZVZvv1/w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css" integrity="sha512-YbS50i/fVZ4mgkOHG05f7kl4X9XuVShn8e05P40iHDMBnMPahhZ7k8tC5dAT7HbXhtnugplE1mCCthAhakMngw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f8f8f8;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 48px;
+  font-weight: bold;
+  color: #333;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.task.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.title {
+  flex: 1;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.actions {
+  margin-left: 10px;
+}
+
+.created {
+  margin-left: 10px;
+  font-size: 12px;
+  color: gray;
+}
+
+.icon {
+  margin-right: 5px;
+}
+
+.add-task-btn {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  background-color: #ffb300;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.add-task-btn:hover {
+  background-color: #ff9900;
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    {% block content %}
+    {% endblock %}
+    <button class="button is-primary add-task-btn"><i class="icon fas fa-plus"></i> Add Task</button>
+  </div>
+  <div class="footer">
+    Made with ❤️ by <a href="https://www.instagram.com/iamsaksh_/" target="_blank">Saks</a>
+  </div>
+</body>
+</html>

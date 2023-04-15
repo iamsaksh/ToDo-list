@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1 class="title">Add Task</h1>
+  <hr class="divider">
+  <form method="post">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="title" class="label">Title:</label>
+      <input type="text" class="form-control" name="title" id="title" placeholder="Enter task title...">
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary btn-lg btn-block add-button">Add</button>
+      <a href="{% url 'home' %}" class="btn btn-secondary btn-lg btn-block cancel-button">Cancel</a>
+    </div>
+  </form>
+{% endblock %}
+
+{% block css %}
+  <style>
+    .form-group {
+      margin: 20px 0;
+    }
+    .label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #333;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 14px;
+      font-size: 18px;
+      border-radius: 8px;
+      border: 2px solid #ddd;
+      box-sizing: border-box;
+      transition: border-color 0.2s ease-in-out;
+    }
+    input[type="text"]:focus {
+      outline: none;
+      border-color: #4CAF50;
+    }
+    .add-button {
+      padding: 16px 0;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 8px;
+      border: none;
+      background-color: #4CAF50;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+    }
+    .add-button:hover {
+      background-color: #388E3C;
+    }
+    .cancel-button {
+      background-color: #ccc;
+      color: #333;
+      transition: background-color 0.2s ease-in-out;
+    }
+    .cancel-button:hover {
+      background-color: #999;
+      color: #fff;
+    }
+    .title {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #333;
+      text-align: center;
+      text-shadow: 1px 1px #ddd;
+    }
+    .divider {
+      border: none;
+      height: 2px;
+      background-color: #ddd;
+      margin-bottom: 20px;
+    }
+  </style>
+{% endblock %}
